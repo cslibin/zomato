@@ -63,22 +63,39 @@ class _MoneyState extends State<Money> {
             Card(
               child: ListTile(
                 leading: Container(
-                  child: Icon(Icons.abc),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.grey)),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Image.network(
+                      "https://w7.pngwing.com/pngs/205/162/png-transparent-indian-rupee-sign-computer-icons-money-india-text-investment-payment.png",
+                    ),
+                  ),
                 ),
-                title: Text("ZOMATO"),
-                trailing: Text("₹0"),
+                title: Text(
+                  "Zomato Balance",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                trailing: Text(
+                  "₹0",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
               ),
             ),
             SizedBox(
               height: 20,
             ),
             Text(
-              "GIFT CARdS",
+              "GIFT CARDS",
               style: TextStyle(fontSize: 15),
+            ),
+            SizedBox(
+              height: 40,
             ),
             Container(
               width: double.infinity,
-              height: 250,
+              height: 200,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: Colors.grey)),
@@ -88,14 +105,13 @@ class _MoneyState extends State<Money> {
                   title: Text("Claim a Gift Card"),
                 ),
                 ListTile(
-                  subtitle: Text("balance"),
+                  subtitle: Text("Balance:₹0.00"),
                   trailing: Icon(Icons.arrow_forward_ios),
                   title: Text("Claim a Gift Card"),
                 ),
                 ListTile(
-                  subtitle: Text("balance"),
                   trailing: Icon(Icons.arrow_forward_ios),
-                  title: Text("Claim a Gift Card"),
+                  title: Text("Purchase History"),
                 )
               ]),
             )

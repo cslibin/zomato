@@ -415,20 +415,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           Icons.tune,
                         ),
-                        Text("filter"),
+                        Text("Sort"),
                         Icon(Icons.arrow_drop_down)
                       ],
                     ),
                   ),
-                  ChipContainer(name: "Book Table"),
+                  ChipContainer(name: "Award Winners"),
                   ChipContainer(name: "Nearest"),
                   ChipContainer(name: "Rating4.0+"),
                   ChipContainer(name: "Pure Veg"),
-                  ChipContainer(name: "Outdoor Seating"),
-                  ChipContainer(name: "Serves Alcohol"),
-                  ChipContainer(name: "Open Now"),
-                  ChipContainer(name: "Cafes"),
-                  ChipContainer(name: "Fine Dining"),
                   Container(
                     height: 30,
                     margin: EdgeInsets.all(8),
@@ -441,7 +436,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           Icons.ac_unit,
                         ),
-                        Text("Rating"),
+                        Text("Cuisines"),
                         Icon(Icons.arrow_drop_down_sharp)
                       ],
                     ),
@@ -504,7 +499,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               Container(
                                 width: double.infinity,
                                 height: 250,
-                                child: Image.network(image[index]),
+                                child: Image.network(
+                                  image[index],
+                                  fit: BoxFit.fill,
+                                ),
                               ),
                               Positioned(
                                 right: 15,

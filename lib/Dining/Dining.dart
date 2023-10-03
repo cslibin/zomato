@@ -15,7 +15,11 @@ class _DiningState extends State<Dining> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [CircleAvatar()],
+        actions: [
+          CircleAvatar(
+            child: Icon(Icons.person),
+          )
+        ],
         backgroundColor: Colors.black,
         title: Row(
           children: [
@@ -301,85 +305,82 @@ class _DiningState extends State<Dining> {
               ),
             ],
           ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              // height: 400,
-              child: ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 400,
-                        height: 350,
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              spreadRadius: 2,
-                              blurRadius: 2,
-                            ),
-                          ],
-                          borderRadius: BorderRadius.circular(20),
+          ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 400,
+                    height: 350,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          spreadRadius: 2,
+                          blurRadius: 2,
                         ),
-                        child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Stack(children: [
-                              Container(
-                                width: double.infinity,
-                                height: 250,
-                                child: Image.network(image[index]),
-                              ),
-                              Positioned(
-                                right: 15,
-                                top: 10,
-                                child: Icon(
-                                  Icons.more_vert,
-                                  size: 30,
-                                  color: Color.fromARGB(255, 252, 250, 250),
-                                ),
-                              ),
-                              Positioned(
-                                right: 40,
-                                top: 10,
-                                child: Icon(
-                                  Icons.favorite_outline,
-                                  size: 30,
-                                  color: Color.fromARGB(255, 248, 247, 247),
-                                ),
-                              ),
-                            ]),
-                            Container(
-                              height: 100,
-                              width: double.infinity,
-                              color: Color.fromARGB(255, 252, 251, 251),
-                              child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    dininghotel[index],
-                                    Container(
-                                      margin: EdgeInsets.all(10),
-                                      height: 20,
-                                      width: 40,
-                                      color: Colors.green,
-                                      child: star[index],
-                                    ),
-                                  ]),
+                      ],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      // mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Stack(children: [
+                          Container(
+                            width: double.infinity,
+                            height: 250,
+                            child: Image.network(
+                              image[index],
+                              fit: BoxFit.fill,
                             ),
+                          ),
+                          Positioned(
+                            right: 15,
+                            top: 10,
+                            child: Icon(
+                              Icons.more_vert,
+                              size: 30,
+                              color: Color.fromARGB(255, 252, 250, 250),
+                            ),
+                          ),
+                          Positioned(
+                            right: 40,
+                            top: 10,
+                            child: Icon(
+                              Icons.favorite_outline,
+                              size: 30,
+                              color: Color.fromARGB(255, 248, 247, 247),
+                            ),
+                          ),
+                        ]),
+                        Container(
+                          height: 100,
+                          width: double.infinity,
+                          color: Color.fromARGB(255, 252, 251, 251),
+                          child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                dininghotel[index],
+                                Container(
+                                  margin: EdgeInsets.all(10),
+                                  height: 20,
+                                  width: 40,
+                                  color: Colors.green,
+                                  child: star[index],
+                                ),
+                              ]),
+                        ),
 
-                            ///
-                          ],
-                        ),
-                      ),
-                    );
-                  }),
-            ),
-          )
+                        ///
+                      ],
+                    ),
+                  ),
+                );
+              }),
         ],
       ),
     );
